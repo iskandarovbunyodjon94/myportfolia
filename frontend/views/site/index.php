@@ -194,8 +194,8 @@ $this->title = 'My Yii Application';
                     <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
                     <ul>
                         <li>Portland par 127,Orlando, FL</li>
-                        <li>(123) 456-7891</li>
-                        <li>alice.barkley@example.com</li>
+                        <li>+(998) 99-949-05-50</li>
+                        <li>bunyodbek9449@gmail.com</li>
                     </ul>
                 </div>
 

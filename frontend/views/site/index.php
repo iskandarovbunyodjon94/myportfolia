@@ -617,7 +617,7 @@ $this->title = 'My Yii Application';
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Contact</h2>
+            <h2>КОНТАКТ</h2>
         </div>
 
         <div class="row mt-1">
@@ -626,20 +626,20 @@ $this->title = 'My Yii Application';
                 <div class="info">
                     <div class="address">
                         <i class="bi bi-geo-alt"></i>
-                        <h4>Location:</h4>
-                        <p>A108 Adam Street, New York, NY 535022</p>
+                        <h4>Расположение:</h4>
+                        <p>Юнусобадский район, город Ташкент, Узбекистан</p>
                     </div>
 
                     <div class="email">
                         <i class="bi bi-envelope"></i>
-                        <h4>Email:</h4>
-                        <p>info@example.com</p>
+                        <h4>Электронная почта:</h4>
+                        <p>bunyodbek9449@gmail.com</p>
                     </div>
 
                     <div class="phone">
                         <i class="bi bi-phone"></i>
-                        <h4>Call:</h4>
-                        <p>+1 5589 55488 55s</p>
+                        <h4>Звонок:</h4>
+                        <p>+(998) 99-949-05-50</p>
                     </div>
 
                 </div>
@@ -651,24 +651,24 @@ $this->title = 'My Yii Application';
                 <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя" required>
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Ваш адрес электронной почты" required>
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Тема" required>
                     </div>
                     <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                        <textarea class="form-control" name="message" rows="5" placeholder="Сообщение" required></textarea>
                     </div>
                     <div class="my-3">
-                        <div class="loading">Loading</div>
+                        <div class="loading">Загрузка</div>
                         <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                        <div class="sent-message">Ваше сообщение было отправлено. Спасибо!</div>
                     </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
+                    <div class="text-center"><button type="submit">Отправить сообщение</button></div>
                 </form>
 
             </div>

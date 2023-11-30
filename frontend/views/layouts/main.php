@@ -36,8 +36,8 @@ AppAsset::register($this);
             <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Главный</span></a></li>
             <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>О себя</span></a></li>
             <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Резюме</span></a></li>
-            <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Портфолио</span></a></li>
-            <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Услуги</span></a></li>
+<!--            <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Портфолио</span></a></li>-->
+<!--            <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Услуги</span></a></li>-->
             <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Контакты</span></a></li>
         </ul>
     </nav><!-- .nav-menu -->

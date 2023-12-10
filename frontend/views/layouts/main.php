@@ -26,9 +26,9 @@ AppAsset::register($this);
     <li style="display: inline-block; padding: 2px 15px 4px; border-radius: 4px; color: rgb(255, 255, 255);
                border: 1px solid rgb(78, 121, 144); font-size: 17px; text-align: center">
         <?php if (Yii::$app->language == 'en'): ?>
-            <a href="<?= Url::current(['language' => 'ru']) ?>" title="Перейти на Русский" class="ru active"><i class="fa fa-globe">Русский</i></a>
+            <a href="<?= Url::current(['language' => 'ru']) ?>"><i class="fa fa-globe">Русский</i></a>
         <?php elseif (Yii::$app->language == 'ru'): ?>
-            <a href="<?= Url::current(['language' => 'en']) ?>" title="Go to English" class="en "><i class="fa fa-globe">English</i></a>
+            <a href="<?= Url::current(['language' => 'en']) ?>"><i class="fa fa-globe">English</i></a>
         <?php endif; ?>
     </li>
 </head>

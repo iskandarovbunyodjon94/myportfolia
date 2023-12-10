@@ -9,6 +9,7 @@ use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -21,6 +22,15 @@ AppAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
+    <li style="display: inline-block; padding: 2px 15px 4px; border-radius: 4px; color: rgb(255, 255, 255);
+               border: 1px solid rgb(78, 121, 144); font-size: 17px; text-align: center">
+        <?php if (Yii::$app->language == 'en'): ?>
+            <a href="<?= Url::current(['language' => 'ru']) ?>" title="Перейти на Русский" class="ru active"><i class="fa fa-globe">Русский</i></a>
+        <?php elseif (Yii::$app->language == 'ru'): ?>
+            <a href="<?= Url::current(['language' => 'en']) ?>" title="Go to English" class="en "><i class="fa fa-globe">English</i></a>
+        <?php endif; ?>
+    </li>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -33,14 +43,16 @@ AppAsset::register($this);
 
     <nav id="navbar" class="navbar nav-menu">
         <ul>
-            <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Главный</span></a></li>
-            <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>О себя</span></a></li>
-            <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Резюме</span></a></li>
+            <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span><?= Yii::t('common', 'Home')?></span></a></li>
+            <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span><?= Yii::t('common', 'About us')?></span></a></li>
+            <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span><?= Yii::t('common', 'Resume')?></span></a></li>
 <!--            <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Портфолио</span></a></li>-->
 <!--            <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Услуги</span></a></li>-->
-            <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Контакты</span></a></li>
+            <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span><?= Yii::t('common', 'Contact')?></span></a></li>
         </ul>
     </nav><!-- .nav-menu -->
+
+
 
 </header><!-- End Header -->
 
@@ -77,7 +89,12 @@ AppAsset::register($this);
             <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
         </div>
         <div class="copyright">
-            &copy; Авторские права <strong><span>МойРезюме</span></strong>. Все права защищены
+            &copy; Авторские права <strong><span>МойРезюме</span></strong>. Все права защищены |
+            <?php if (Yii::$app->language == 'en'): ?>
+                <a href="<?= Url::current(['language' => 'ru']) ?>">Перейти на Русский</a>
+            <?php elseif (Yii::$app->language == 'ru'): ?>
+                <a href="<?= Url::current(['language' => 'en']) ?>">Go to English</a>
+            <?php endif; ?>
         </div>
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->

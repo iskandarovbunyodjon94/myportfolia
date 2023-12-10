@@ -8,6 +8,8 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+    'language' => 'ru',
+    'sourceLanguage' => 'en',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
@@ -39,10 +41,31 @@ return [
         ],
 
         'urlManager' => [
-            'scriptUrl'=>'/index.php',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'class' => 'codemix\localeurls\UrlManager',
+            'languages' => ['en', 'ru'],
+            'enableDefaultLanguageUrlCode' => true,
             'rules' => [
+            ],
+        ],
+        'i18n' => [
+            'translations' => [
+                'frontend*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                    'sourceLanguage' => 'en',
+                ],
+                'backend*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                    'sourceLanguage' => 'en',
+                ],
+                '*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                    'sourceLanguage' => 'en',
+                ],
             ],
         ],
 

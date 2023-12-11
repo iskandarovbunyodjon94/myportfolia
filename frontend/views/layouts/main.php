@@ -59,8 +59,8 @@ AppAsset::register($this);
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
-        <h1>Бунёджон Шухратович Искандаров</h1>
-        <p>Я <span class="typed" data-typed-items="программист, фрилансер, водитель, добрый человек"></span></p>
+        <h1><?= Yii::t('common', 'Bunyodjon Shukhratovich Iskandarov')?></h1>
+        <p><?= Yii::t('common', 'I am ')?> <span class="typed" data-typed-items="<?= Yii::t('common', 'programmer, freelancer, driver, kind person')?>"></span></p>
         <div class="social-links">
             <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
             <a href="https://t.me/bunyodjon_shuxratovich94" class="telegram"><i class="bx bxl-telegram"></i></a>
@@ -80,7 +80,7 @@ AppAsset::register($this);
 <!-- ======= Footer ======= -->
 <footer id="footer">
     <div class="container">
-        <h3>Бунёджон Шухратович Искандаров</h3>
+        <h3><?= Yii::t('common', 'Bunyodjon Shukhratovich Iskandarov')?></h3>
         <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
         <div class="social-links">
             <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
@@ -89,11 +89,10 @@ AppAsset::register($this);
             <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
         </div>
         <div class="copyright">
-            &copy; Авторские права <strong><span>МойРезюме</span></strong>. Все права защищены |
             <?php if (Yii::$app->language == 'en'): ?>
-                <a href="<?= Url::current(['language' => 'ru']) ?>">Перейти на Русский</a>
+                <a href="<?= Url::current(['language' => 'ru']) ?>">Go to Russian</a>
             <?php elseif (Yii::$app->language == 'ru'): ?>
-                <a href="<?= Url::current(['language' => 'en']) ?>">Go to English</a>
+                <a href="<?= Url::current(['language' => 'en']) ?>">Перейти на Английский</a>
             <?php endif; ?>
         </div>
         <div class="credits">

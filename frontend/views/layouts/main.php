@@ -23,14 +23,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 
-    <li style="display: inline-block; padding: 2px 15px 4px; border-radius: 4px; color: rgb(255, 255, 255);
-               border: 1px solid rgb(78, 121, 144); font-size: 17px; text-align: center">
-        <?php if (Yii::$app->language == 'en'): ?>
-            <a href="<?= Url::current(['language' => 'ru']) ?>"><i class="fa fa-globe">Русский</i></a>
-        <?php elseif (Yii::$app->language == 'ru'): ?>
-            <a href="<?= Url::current(['language' => 'en']) ?>"><i class="fa fa-globe">English</i></a>
-        <?php endif; ?>
-    </li>
+
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -49,6 +42,23 @@ AppAsset::register($this);
 <!--            <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Портфолио</span></a></li>-->
 <!--            <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Услуги</span></a></li>-->
             <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span><?= Yii::t('common', 'Contact')?></span></a></li>
+            <li>
+                <?php if (Yii::$app->language == 'en'): ?>
+                   <div>
+                       <a href="<?= Url::current(['language' => 'ru']) ?>" class="nav-link scrollto">
+                           <i class="bx bxs-left-arrow-square"></i>
+                           <span>Go to English</span>
+                       </a>
+                   </div>
+                <?php elseif (Yii::$app->language == 'ru'): ?>
+                    <div>
+                        <a href="<?= Url::current(['language' => 'en']) ?>" class="nav-link scrollto">
+                            <i class="bx bxs-left-arrow-square"></i>
+                            <span>Перейти на Английский</span>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            </li>
         </ul>
     </nav><!-- .nav-menu -->
 

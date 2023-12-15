@@ -11,7 +11,7 @@ $this->title = 'Резюме';
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>О себя</h2>
+            <h2><?= Yii::t('common', 'About')?></h2>
         </div>
 
         <div class="row">
@@ -19,25 +19,25 @@ $this->title = 'Резюме';
                 <img src="/static/assets/img/profile-img.jpg" class="img-fluid" alt="">
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content">
-                <h3>Локальный администратор &amp; Веб разработчик.</h3>
+                <h3><?= Yii::t('common', 'Local Administrator & Web developer')?>.</h3>
                 <p class="fst-italic">
-                    Окончил Национальный университет Узбекистана имени Мирзо Улугбека.
+                    <?= Yii::t('common', 'Graduated from the National University of Uzbekistan named after Mirzo Ulugbek')?>.
                 </p>
                 <div class="row">
                     <div class="col-lg-6">
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <strong>День рождения:</strong> <span>08 Июля 1994</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Веб-сайт:</strong> <span>На разработке</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Телефон:</strong> <span>+998 99 949 05 50</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Город:</strong> <span>Ташкент, Узбекистан</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Birthday')?>:</strong> <span><?= Yii::t('common', '08 July 1994')?></span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Web site')?>:</strong> <span><?= Yii::t('common', 'Under development')?></span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Phone')?>:</strong> <span><?= Yii::t('common', '+998 99 949 05 50')?></span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'City')?>:</strong> <span><?= Yii::t('common', 'Tashkent, Uzbekistan')?></span></li>
                         </ul>
                     </div>
                     <div class="col-lg-6">
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Возраст:</strong> <span>29</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Степень:</strong> <span>Бакалавр</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Почта:</strong> <span>bunyodbek9449@gmail.com</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Внештатный работа:</strong> <span>Доступный</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Age') ?>:</strong> <span><?= Yii::t('common', '29') ?></span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Degree') ?>:</strong> <span><?= Yii::t('common', 'Bachelor') ?></span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Mail') ?>:</strong> <span>bunyodbek9449@gmail.com</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Freelance work') ?>:</strong> <span><?= Yii::t('common', 'Accessible') ?></span></li>
                         </ul>
                     </div>
                 </div>

@@ -47,7 +47,7 @@ AppAsset::register($this);
                    <div>
                        <a href="<?= Url::current(['language' => 'ru']) ?>" class="nav-link scrollto">
                            <i class="bx bxs-left-arrow-square"></i>
-                           <span>Go to English</span>
+                           <span>Go to Russian</span>
                        </a>
                    </div>
                 <?php elseif (Yii::$app->language == 'ru'): ?>

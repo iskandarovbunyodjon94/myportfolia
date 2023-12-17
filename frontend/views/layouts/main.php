@@ -91,20 +91,14 @@ AppAsset::register($this);
 <footer id="footer">
     <div class="container">
         <h3><?= Yii::t('common', 'Bunyodjon Shukhratovich Iskandarov')?></h3>
-        <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+        <br>
         <div class="social-links">
             <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
             <a href="https://t.me/bunyodjon_shuxratovich94" class="telegram"><i class="bx bxl-telegram"></i></a>
             <a href="https://www.facebook.com/bunyod.iskandarov.94" class="facebook"><i class="bx bxl-facebook"></i></a>
             <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
         </div>
-        <div class="copyright">
-            <?php if (Yii::$app->language == 'en'): ?>
-                <a href="<?= Url::current(['language' => 'ru']) ?>">Go to Russian</a>
-            <?php elseif (Yii::$app->language == 'ru'): ?>
-                <a href="<?= Url::current(['language' => 'en']) ?>">Перейти на Английский</a>
-            <?php endif; ?>
-        </div>
+
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you purchased the pro version. -->

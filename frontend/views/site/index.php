@@ -9,11 +9,9 @@ $this->title = 'Резюме';
 <!-- ======= About Section ======= -->
 <section id="about" class="about">
     <div class="container" data-aos="fade-up">
-
         <div class="section-title">
             <h2><?= Yii::t('common', 'About')?></h2>
         </div>
-
         <?php if (Yii::$app->language == 'en'):?>
         <?= $model->content_en;?>
         <?php else:?>
@@ -154,71 +152,17 @@ $this->title = 'Резюме';
 <!-- ======= Resume Section ======= -->
 <section id="resume" class="resume">
     <div class="container" data-aos="fade-up">
-
         <div class="section-title">
             <h2><?= Yii::t('common', 'RESUME') ?></h2>
             <p><?= Yii::t('common', 'It takes a lot of effort to get the benefits. His needs stem from something that actually turns him off. Let them be what they want. Anyone who wants. And no one who hinders gets others. Because he will have to run to this convenient office that is located here.') ?></p>
         </div>
-
         <div class="row">
-            <div class="col-lg-6">
-                <h3 class="resume-title"><?= Yii::t('common', 'Brief content') ?></h3>
-                <div class="resume-item pb-0">
-                    <h4><?= Yii::t('common', 'Bunyodjon Iskandarov') ?></h4>
-                    <p><em><?= Yii::t('common', 'Innovative and deadline-driven graphic designer with over 3 years of experience designing and developing user-centric digital/print marketing materials from initial concept to final, flawless result.') ?></em></p>
-                    <ul>
-                        <li><?= Yii::t('common', 'Tashkent city, Yunusabad district, Nurmakon street, building 223') ?></li>
-                        <li>+(998) 99-949-05-50</li>
-                        <li>bunyodbek9449@gmail.com</li>
-                    </ul>
-                </div>
-
-                <h3 class="resume-title"><?= Yii::t('common', 'Education') ?></h3>
-                <div class="resume-item">
-                    <h4><?= Yii::t('common', 'High school student') ?></h4>
-                    <h5>2001 - 2010</h5>
-                    <p><em><?= Yii::t('common', 'General secondary school No. 97, Tashkent') ?></em></p>
-                </div>
-                <div class="resume-item">
-                    <h4><?= Yii::t('common', 'Academic lyceum student') ?></h4>
-                    <h5>2010 - 2013</h5>
-                    <p><em><?= Yii::t('common', 'Academic Lyceum named after S.H.Sirozhiddinova, Tashkent') ?></em></p>
-                </div>
-                <div class="resume-item">
-                    <h4><?= Yii::t('common', 'Student of the university') ?></h4>
-                    <h5>2013 - 2017</h5>
-                    <p><em><?= Yii::t('common', 'National University of the Republic of Uzbekistan named after Mirzo Ulugbek, Tashkent') ?></em></p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h3 class="resume-title"><?= Yii::t('common', 'Professional experience') ?></h3>
-                <div class="resume-item">
-                    <h4><?= Yii::t('common', 'software engineer') ?></h4>
-                    <h5>2017 - 2018</h5>
-                    <p><em><?= Yii::t('common', 'Operating systems and database monitoring department') ?></em></p>
-                    <p><em><?= Yii::t('common', 'Information and Computing Center of the Joint Stock Company "Uzbek Railways"') ?></em></p>
-                </div>
-                <div class="resume-item">
-                    <h4><?= Yii::t('common', 'software engineer category 2') ?></h4>
-                    <h5>2018 - 2019</h5>
-                    <p><em><?= Yii::t('common', 'Operating systems and database monitoring department') ?></em></p>
-                    <p><em><?= Yii::t('common', 'Information and Computing Center of the Joint Stock Company "Uzbek Railways"') ?></em></p>
-                </div>
-                <div class="resume-item">
-                    <h4><?= Yii::t('common', 'Leading Specialist') ?></h4>
-                    <h5>2018 - 2021</h5>
-                    <p><em><?= Yii::t('common', 'Information and Communication Technologies Department') ?></em></p>
-                    <p><em><?= Yii::t('common', 'Agency of Special Educational Institutions under the Ministry of Preschool and School Education of the Republic of Uzbekistan') ?></em></p>
-                </div>
-                <div class="resume-item">
-                    <h4><?= Yii::t('common', 'Chief Specialist') ?></h4>
-                    <h5>2021 - <?= Yii::t('common', 'Present') ?></h5>
-                    <p><em><?= Yii::t('common', 'Information and Communication Technologies Department') ?></em></p>
-                    <p><em><?= Yii::t('common', 'Agency of Special Educational Institutions under the Ministry of Preschool and School Education of the Republic of Uzbekistan') ?></em></p>
-                </div>
-            </div>
+            <?php if (Yii::$app->language == 'en'):?>
+                <?= $resumeModel->content_en;?>
+            <?php else:?>
+                <?= $resumeModel->content_ru;?>
+            <?php endif;?>
         </div>
-
     </div>
 </section><!-- End Resume Section -->
 

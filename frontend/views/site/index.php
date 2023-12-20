@@ -14,39 +14,11 @@ $this->title = 'Резюме';
             <h2><?= Yii::t('common', 'About')?></h2>
         </div>
 
-        <div class="row">
-            <div class="col-lg-4">
-                <img src="/static/assets/img/profile-img.jpg" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-8 pt-4 pt-lg-0 content">
-                <h3><?= Yii::t('common', 'Local Administrator & Web developer')?>.</h3>
-                <p class="fst-italic">
-                    <?= Yii::t('common', 'Graduated from the National University of Uzbekistan named after Mirzo Ulugbek')?>.
-                </p>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Birthday')?>:</strong> <span><?= Yii::t('common', '08 July 1994')?></span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Web site')?>:</strong> <span><?= Yii::t('common', 'Under development')?></span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Phone')?>:</strong> <span><?= Yii::t('common', '+998 99 949 05 50')?></span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'City')?>:</strong> <span><?= Yii::t('common', 'Tashkent, Uzbekistan')?></span></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Age') ?>:</strong> <span><?= Yii::t('common', '29') ?></span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Degree') ?>:</strong> <span><?= Yii::t('common', 'Bachelor') ?></span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Mail') ?>:</strong> <span>bunyodbek9449@gmail.com</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong><?= Yii::t('common', 'Freelance work') ?>:</strong> <span><?= Yii::t('common', 'Accessible') ?></span></li>
-                        </ul>
-                    </div>
-                </div>
-                <p>
-                    <?= Yii::t('common', 'He actively, conscientiously and continuously works with the organization, well understanding the requirements of our time. His faith is strong, his political and spiritual level fully corresponds to the requirements of the period of independence. He earned a good reputation among his community for his hard work, exactingness, correctness, good sense of responsibility, knowledge, kindness to others and always ready to help.') ?>
-                </p>
-            </div>
-        </div>
-
+        <?php if (Yii::$app->language == 'en'):?>
+        <?= $model->content_en;?>
+        <?php else:?>
+        <?= $model->content_ru;?>
+        <?php endif;?>
     </div>
 </section><!-- End About Section -->
 

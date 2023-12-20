@@ -2,6 +2,8 @@
 
 namespace frontend\controllers;
 
+use common\models\AboutSection;
+use common\models\ResumeSection;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -75,7 +77,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = AboutSection::findOne(['id' => 1]);
+        $resumeModel = ResumeSection::findOne(['id' => 1]);
+        return $this->render('index', [
+            'model' => $model,
+            'resumeModel' => $resumeModel,
+        ]);
     }
 
     /**

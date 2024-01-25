@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\AboutSection;
+use common\models\Contact;
 use common\models\ResumeSection;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
@@ -79,9 +80,23 @@ class SiteController extends Controller
     {
         $model = AboutSection::findOne(['id' => 1]);
         $resumeModel = ResumeSection::findOne(['id' => 1]);
+        $contactModel = new Contact();
+
+        if ($this->request->isPost) {
+            if ($contactModel->load($this->request->post())) {
+
+                $contactModel->save(false) && $contactModel->sendEmail($contactModel);
+
+                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+            }
+        } else {
+            $model->loadDefaultValues();
+        }
+
         return $this->render('index', [
             'model' => $model,
             'resumeModel' => $resumeModel,
+            'contactModel' => $contactModel,
         ]);
     }
 

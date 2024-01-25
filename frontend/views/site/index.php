@@ -2,6 +2,10 @@
 
 /** @var yii\web\View $this */
 
+use yii\bootstrap5\ActiveForm;
+use yii\helpers\Html;
+use yii\helpers\Url;
+
 $this->title = 'Резюме';
 ?>
 
@@ -202,44 +206,115 @@ $this->title = 'Резюме';
             </div>
 
             <div class="col-lg-8 mt-5 mt-lg-0">
+                <?php \yii\widgets\Pjax::begin(['id' => 'pjax-container']);?>
+                <?php $form =  ActiveForm::begin([
+                    'class' => 'php-email-form',
+                    'id' => 'contact-form', // add an ID for easy identification in JavaScript
+                    'options' => ['data-pjax' => true], // enable PJAX for the form
+                ]);?>
+                    <div class="row">
 
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                    <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="<?= Yii::t('common', 'Your name') ?>" required>
+                            <?= $form->field($contactModel, 'fio')->textInput(['class' => 'form-control', 'placeholder' => Yii::t('common', 'Your full name')])->label(false);?>
                         </div>
+
                         <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="<?= Yii::t('common', 'Your e-mail address') ?>" required>
+                            <?= $form->field($contactModel, 'birth_place')->textInput(['class' => 'form-control', 'placeholder' => Yii::t('common', 'Your birth place')])->label(false);?>
                         </div>
                     </div>
+
                     <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="<?= Yii::t('common', 'Subject') ?>" required>
-                    </div>
-                    <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" placeholder="<?= Yii::t('common', 'Message') ?>" required></textarea>
-                    </div>
-                    <div class="my-3">
-                        <div class="loading"><?= Yii::t('common', 'Loading') ?></div>
-                        <div class="error-message"></div>
-                        <div class="sent-message"><?= Yii::t('common', 'Your message has been sent. Thank you!') ?></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <div class="text-center">
-                                <button type="submit"><?= Yii::t('common', 'Send a message') ?></button>
+                        <div class="row">
+
+                            <div class="col-md-6 form-group">
+                                <?= $form->field($contactModel, 'address')->textInput(['class' => 'form-control', 'placeholder' => Yii::t('common', 'Your address')])->label(false);?>
                             </div>
-                        </div>
-                        <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <div class="text-center">
-                                <button type="submit"><?= Yii::t('common', 'Check status') ?></button>
+
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <?= $form->field($contactModel, 'phone_number')->textInput(['class' => 'form-control', 'placeholder' => Yii::t('common', 'Your number')])->label(false);?>
                             </div>
                         </div>
                     </div>
-                </form>
 
+                    <div class="form-group mt-3">
+                        <?= $form->field($contactModel, 'email')->textInput(['class' => 'form-control', 'placeholder' => Yii::t('common', 'Email')])->label(false);?>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <?= $form->field($contactModel, 'message')->textarea(['class' => 'form-control', 'placeholder' => Yii::t('common', 'Message')])->label(false)?>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <div class="text-center text-success">
+                                <?= Html::submitButton(Yii::t('common', 'Send a message'), ['class' => 'btn btn-outline-primary rounded-5', 'id' => 'loading']) ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php ActiveForm::end();?>
+                <?php \yii\widgets\Pjax::end();?>
             </div>
 
         </div>
 
     </div>
 </section><!-- End Contact Section -->
+
+<?php
+// Add the following JavaScript code to handle the AJAX submission
+$ajaxUrl = Url::to(['site/index']); // Replace with the actual controller and action handling the form submission
+
+$js = <<<JS
+    // Attach a submit handler to the form
+    $('#contact-form').on('beforeSubmit', function(e) {
+        var form = $(this);
+        var submitBtn = form.find('#loading');
+
+        // Disable the submit button and show "Please wait" text
+        submitBtn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> Please wait...');
+
+        // Make the AJAX request
+        $.ajax({
+            url: form.attr('action') || window.location.href,
+            type: 'post',
+            data: form.serialize(),
+            success: function(data) {
+                // Handle the success response
+                $.pjax.reload({container: '#pjax-container'}); // Replace with the actual PJAX container ID
+
+                // Show SweetAlert on success
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Your message has been sent successfully.',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then(function() {
+                    // Refresh the page
+                    location.reload();
+                });
+
+                // Additional actions on success if needed
+            },
+            error: function(data) {
+                // Handle the error response
+                // Additional actions on error if needed
+            },
+            complete: function() {
+                // Re-enable the submit button and restore its text
+                submitBtn.prop('disabled', false).html('Send a message');
+            }
+        });
+
+        return false; // Prevent the form from submitting in the traditional way
+    });
+
+    // Optionally, you can also handle form validation using client-side validation libraries like Parsley.js
+    // Example:
+    // $('#contact-form').parsley();
+JS;
+
+$this->registerJs($js);
+?>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

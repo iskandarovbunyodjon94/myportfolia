@@ -39,8 +39,6 @@ AppAsset::register($this);
             <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span><?= Yii::t('common', 'Home')?></span></a></li>
             <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span><?= Yii::t('common', 'About us')?></span></a></li>
             <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span><?= Yii::t('common', 'Resume')?></span></a></li>
-<!--            <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Портфолио</span></a></li>-->
-<!--            <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Услуги</span></a></li>-->
             <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span><?= Yii::t('common', 'Contact')?></span></a></li>
             <li>
                 <?php if (Yii::$app->language == 'en'): ?>
@@ -97,14 +95,6 @@ AppAsset::register($this);
             <a href="https://t.me/bunyodjon_shuxratovich94" class="telegram"><i class="bx bxl-telegram"></i></a>
             <a href="https://www.facebook.com/bunyod.iskandarov.94" class="facebook"><i class="bx bxl-facebook"></i></a>
             <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        </div>
-
-        <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: [license-url] -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
-            <!-- Разработано <a href="#">BootstrapMade</a> -->
         </div>
     </div>
 </footer><!-- End Footer -->
